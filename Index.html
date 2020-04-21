@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html id='myid'>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Counting Test</title>
+    <link rel='stylesheet' type="text/css" href='style.css' />
+    <script src="app.js"></script>
+</head>
+<body id='container' onload="load()" >
+        <div id='ti'>
+            <h3>Time</h3>
+            <h3>
+                <span id="sec">00</span> .
+                <span id="milisec">00</span>
+            </h3>
+        </div>
+    <div  id='ad'>
+        <h2>Click The Numbers as quickly as you can!<br>Press Start Button to Start the Game</h2>
+    </div>
+    <div id="control">
+        <button id="but20" onclick="startStop();myFunction()">Start</button>
+    </div>
+    <div id='it'>
+        <h3>Best Time</h3>
+        <div  id="bt">0</div>
+        <div  id="fr">0</div>
+        <div  id="se">0</div>
+        <div  id="th">0</div>
+        <div  id="fo">0</div>
+    </div>
+    <div class='square' id='square' style="display:none">
+        <button id='but8' onclick="RemoveItself8()">24</button>
+        <button id='but13' onclick="RemoveItself13()">29</button>
+        <button id="but0" onclick="RemoveItself()">16</button>
+        <button id='but2' onclick="RemoveItself2()">18</button>
+        <button id='but11' onclick="RemoveItself11()">27</button>
+        <button id='but9' onclick="RemoveItself9()">25</button>
+        <button id='but7' onclick="RemoveItself7()">23</button>
+        <button id='but1' onclick="RemoveItself1()">17</button>
+        <button id='but4' onclick="RemoveItself4()">20</button>
+        <button id='but15' onclick="RemoveItself15()">31</button>
+        <button id='but6' onclick="RemoveItself6()">22</button>
+        <button id='but10' onclick="RemoveItself10()">26</button>
+        <button id='but5' onclick="RemoveItself5()">21</button>
+        <button id='but3' onclick="RemoveItself3()">19</button>
+        <button id='but12' onclick="RemoveItself12()">28</button>
+        <button id='but14' onclick="RemoveItself14()">30</button>
+    </div>  
+</body>
+</html>
