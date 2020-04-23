@@ -1,3 +1,4 @@
+var arr=[];
 function load() {
   document.getElementById("bt").innerHTML=localStorage["score1"];
   document.getElementById("fr").innerHTML=localStorage["score2"];
@@ -29,6 +30,7 @@ function startStop() { /* Toggle StartStop */
     regame();
     clearInterval(x);
     reset();
+    num=1;
   }
 }
 function start() {
@@ -84,85 +86,6 @@ function reset() {
   document.getElementById("sec").innerHTML = "00";
 
 }
-function RemoveItself() {
-    document.getElementById("but0").style.color="black";
-}
-function RemoveItself1() {
-  if (document.getElementById("but0").style.color=="black") {
-    document.getElementById("but1").style.color="black";
-}
-}
-function RemoveItself2() {
-  if (document.getElementById("but1").style.color=="black") {
-    document.getElementById("but2").style.color="black";
-  }
-}
-function RemoveItself3() {
-  if (document.getElementById("but2").style.color=="black") {
-    document.getElementById("but3").style.color="black";
-  }
-}
-function RemoveItself4() {
-  if (document.getElementById("but3").style.color=="black") {
-    document.getElementById("but4").style.color="black";
-  }
-}
-function RemoveItself5() {
-  if (document.getElementById("but4").style.color=="black") {
-    document.getElementById("but5").style.color="black";
-  }
-}
-function RemoveItself6() {
-  if (document.getElementById("but5").style.color=="black") {
-    document.getElementById("but6").style.color="black";
-  }
-}
-function RemoveItself7() {
-  if (document.getElementById("but6").style.color=="black") {
-    document.getElementById("but7").style.color="black";
-  }
-}
-function RemoveItself8() {
-  if (document.getElementById("but7").style.color=="black") {
-    document.getElementById("but8").style.color="black";
-  }
-}
-function RemoveItself9() {
-  if (document.getElementById("but8").style.color=="black") {
-    document.getElementById("but9").style.color="black";
-  }
-}
-function RemoveItself10() {
-  if (document.getElementById("but9").style.color=="black") {
-    document.getElementById("but10").style.color="black";
-  }
-}
-function RemoveItself11() {
-  if (document.getElementById("but10").style.color=="black") {
-    document.getElementById("but11").style.color="black";
-  }
-}
-function RemoveItself12() {
-  if (document.getElementById("but11").style.color=="black") {
-    document.getElementById("but12").style.color="black";
-  }
-}
-function RemoveItself13() {
-  if (document.getElementById("but12").style.color=="black") {
-    document.getElementById("but13").style.color="black";
-  }
-}
-function RemoveItself14() {
-  if (document.getElementById("but13").style.color=="black") {
-    document.getElementById("but14").style.color="black";
-  }
-}
-function RemoveItself15() {
-  if (document.getElementById("but14").style.color=="black") {
-    document.getElementById("but15").style.color="black";
-    stop();
-  }
-}
 function regame() {
     document.getElementById("but0").style.color="green";
     document.getElementById("but1").style.color="green";
@@ -184,7 +107,7 @@ function regame() {
 
 window.localStorage;
 let data=[];
-let arr=[];
+
 function localstorage(){
   if (secOut<10){
     q=(((secOut+miliSecOut/10)/10).toFixed(2));
