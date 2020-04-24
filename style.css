@@ -30,8 +30,7 @@
         height:372px;
     }
   }
-#but0,#but1,#but2,#but3,#but4,#but5,#but6,#but7,#but8,#but9,#but10,#but11,#but12,#but13,#but14,
-#but15{
+.but0 {
   width: 80px;
   background-color: black;
   border-color: black;

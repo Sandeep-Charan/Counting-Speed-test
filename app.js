@@ -12,22 +12,16 @@ function load() {
 }
 var x,dms,ds;
 var startstop = 0;
-
 function startStop() { /* Toggle StartStop */
-
   startstop = startstop + 1;
-  document.getElementById("bt").innerHTML=localStorage["score1"];
-  document.getElementById("fr").innerHTML=localStorage["score2"];
-  document.getElementById("se").innerHTML=localStorage["score3"];
-  document.getElementById("th").innerHTML=localStorage["score4"];
-  document.getElementById("fo").innerHTML=localStorage["score5"];
   if (startstop === 1) {
     start();
     document.getElementById("but20").innerHTML = "Restart";
+    document.getElementById("square").addEventListener("load", createButtons(), false);
   } else if (startstop === 2) {
     document.getElementById("but20").innerHTML = "Start";
+    window.location.reload();
     startstop = 0;
-    regame();
     clearInterval(x);
     reset();
     num=1;
@@ -42,9 +36,7 @@ function stop() {
 } /* Stop */
 
 var milisec = 0;
-var sec = 0; /* holds incrementing value */
-/* Contains and outputs returned value of  function checkTime */
-
+var sec = 0;
 var miliSecOut = 0;
 var secOut = 0;
 var minOut = 0;
@@ -86,25 +78,6 @@ function reset() {
   document.getElementById("sec").innerHTML = "00";
 
 }
-function regame() {
-    document.getElementById("but0").style.color="green";
-    document.getElementById("but1").style.color="green";
-    document.getElementById("but2").style.color="green";
-    document.getElementById("but3").style.color="green";
-    document.getElementById("but4").style.color="green";
-    document.getElementById("but5").style.color="green";
-    document.getElementById("but6").style.color="green";
-    document.getElementById("but7").style.color="green";
-    document.getElementById("but8").style.color="green";
-    document.getElementById("but9").style.color="green";
-    document.getElementById("but10").style.color="green";
-    document.getElementById("but11").style.color="green";
-    document.getElementById("but12").style.color="green";
-    document.getElementById("but13").style.color="green";
-    document.getElementById("but14").style.color="green";
-    document.getElementById("but15").style.color="green";
-}
-
 window.localStorage;
 let data=[];
 
@@ -177,12 +150,3 @@ function localstorage(){
   }
   }
   console.log(localStorage);
-  function myFunction() {
-    var x = document.getElementById("square");
-
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
