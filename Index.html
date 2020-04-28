@@ -49,7 +49,7 @@
                 var button = document.createElement("button");
                 button.type = "button";
                 button.innerHTML =buttons[i];
-                var color="rgb("+(buttons[i])*7+','+0+','+0+")";
+                var color="rgb("+(255-buttons[i]*5)+','+0+','+0+")";
                 button.style.backgroundColor=color;
                 button.className="but0";
                 var buttonDiv = document.getElementById("square");
