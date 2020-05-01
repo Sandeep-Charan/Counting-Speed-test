@@ -1,0 +1,36 @@
+@media (max-width:900px){
+    #ad {
+        text-align: left;
+        margin-left: 10px;
+        margin-top: -80px;
+        font-size: medium;
+    }
+    #square {
+        grid-template-columns: 35px;
+        grid-gap: 35px;
+        grid-template-rows: 35px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+      }
+    .but0 {
+      width: 40px;
+      height:40px;
+      font-size: small;
+    }
+    #but20{
+      width: 65px;
+      height:40px;
+      margin-left: 110px;
+      margin-top:80px;
+      font-size: 15px;
+    }
+    #ti {
+      text-align: right;
+      margin-top: 0px;
+    }
+    #it {
+      margin-top:50px;
+      text-align: bottom;
+      text-align: center;
+    }
+}

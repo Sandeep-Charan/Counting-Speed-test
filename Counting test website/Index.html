@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html id='myid'>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Counting Test</title>
+    <link rel='stylesheet' type="text/css" href='style.css' />
+    <link rel='stylesheet' type="text/css" href='responsive.css' />
+    <script src="app.js"></script>
+</head>
+<body id='container' onload="load()" >
+    <audio src="c.mp3" id="correct" type="audio/mpeg"></audio>
+    <audio src="w.mp3" id="wrong" type="audio/mpeg"></audio>
+        <div id='ti'>
+            <h3>Time</h3>
+            <h3>
+                <span id="sec">00</span> .
+                <span id="milisec">00</span>
+            </h3>
+        </div>
+        <h2 id='ad'>Click The Numbers!<br>Select Level and press submit<br>Press Start to Start the Game</h2>
+        <input type="radio" id="Easy" name="Choice">
+        <label for="Choice">Easy</label>
+        <input type="radio" id="Medium" name="Choice">
+        <label for="Choice">Medium</label>
+        <input type="radio" id="Hard" name="Choice">
+        <label for="Choice">Hard</label>
+        <button id="submit" onclick="window.location.reload()">Submit</button>
+    <div id="control">
+        <button id="but20" onclick="startStop()">Start</button>
+    </div>
+    <div class='square' id='square'>
+    </div>
+        <div id='it'>
+        <h3>Best Time</h3>
+        <h4  id="bt">0</h4>
+        <h4  id="fr">0</h4>
+        <h4  id="se">0</h4>
+        <h4  id="th">0</h4>
+        <h4  id="fo">0</h4>
+    </div>
+    <script>
+        console.log(window.outerWidth);
+        var n;
+        var state;
+        if(document.getElementById("Easy").checked) {
+            n=16;
+            state="easy";
+        }
+        if(document.getElementById("Medium").checked) { 
+            n=25;
+            state="medium";
+        }
+        if(document.getElementById("Hard").checked) {
+            n=36;
+            state="hard";
+        }
+        var num=1;
+        if (state==="easy" && window.outerWidth>900){
+            document.getElementById("square").style.marginLeft="500px";
+        }
+        else if (state==="medium" && window.outerWidth>900){
+            document.getElementById("square").style.marginLeft="470px";
+        }
+        else if (state==="hard" && window.outerWidth>900) {
+            document.getElementById("square").style.marginLeft="425px";
+        }
+        if(window.outerWidth<900){
+            document.getElementById("square").style.marginLeft="10px";
+        }
+        document.getElementById("square").addEventListener("click",function(e){
+            if (e.target.innerHTML==num.toString()) {
+                e.target.innerHTML="";
+                num+=1;
+                document.getElementById("correct").play();
+            }
+            else {
+                num=num;
+                document.getElementById("wrong").play();
+            }
+            if (num==n+1) {
+                stop();
+                num=1;
+            }
+        });
+        var buttons=[11,6,2,5,3,14,4,8,15,10,1,16,13,7,9,12,19,18,17,24,25,23,22,20,21,35,33,29,28,32,31,30,27,34,26,36];
+        var i=0;
+        function createButtons() {
+            for (var i=0;i<n;i++){
+                var button = document.createElement("button");
+                button.type = "button";
+                button.innerHTML =buttons[i];
+                button.className="but0";
+                var color="rgb("+(255-buttons[i]*5)+','+0+','+0+")";
+                button.style.backgroundColor=color;
+                var buttonDiv = document.getElementById("square");
+                buttonDiv.appendChild(button);
+            }
+        }
+        document.getElementById("square").style.gridTemplateColumns="10px ".repeat(Math.sqrt(n));
+        document.getElementById("square").style.gridTemplateRows="10px ".repeat(Math.sqrt(n));
+    </script>
+</body>
+</html>
